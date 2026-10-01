@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 400px;
+            width: 350px;
+            border: 1px solid ;
+            border-radius: 20px;
+            margin:50px auto;
+            text-align: center;
+            background: linear-gradient(120deg , rgb(7, 94, 120),rgb(23, 155, 60));
+        }
+        .box input{
+            height: 40px;
+            width: 60%;
+            margin-top: 20px;
+        }
+        .box button{
+            height: 40px;
+            width: 30%;
+            font-size: 18px;
+            border: 0px;
+            background-color: tomato;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="search" id="text">
+        <button onclick="fun()">Search</button>
+        
+    </div>
+    <script>
+       async function fun(){
+            let text = document.getElementById('text').value
+            // alert(text)
+            // console.log(text)
+            let key = '69555c187952c3d47c08ea1815012908';
+            let  url = `https://api.openweathermap.org/data/2.5/weather?q=${text}&appid=${key}`;
+            let res = await fetch(url)
+            const data = await res.json();
+            console.log(data)
+            
+        }
+    </script>
+</body>
+</html>

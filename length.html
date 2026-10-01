@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Validation</title>
+    <style>
+        input::placeholder{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    Enter Your Name:
+    <input type="text" id="name">
+    <span id="name_er"></span>
+    <br>
+    Enter Your Email:
+    <input type="email" id="email">
+    <br>
+    Enter Your Number:
+    <input type="number" id="number">
+    <br>
+    Enter Your Adhar Number:
+    <input type="number" id="adhar">
+    <br>
+    <input type="submit" onclick="check()">
+
+    <script>
+        function check(){
+            let name = document.getElementById('name').value
+            let email = document.getElementById('email').value
+            let number = document.getElementById('number').value
+            let adhar = document.getElementById('adhar').value
+            // window.alert(adhar)
+            if(name.length>=3 && name.length<=60){
+                alert("Your Name is valid")
+            }else{
+                alert("Name is invalid")
+                document.getElementById('name').style.border="1px solid red"
+                document.getElementById('name').style.color="red";
+                document.getElementById('name').placeholder="Invalid Name";
+                document.getElementById('name_er').innerHTML="Invalid Name *"
+                document.getElementById('name_er').style.color="red"
+
+            }
+            if(email.length>5 && email.length<=60){
+                alert("valid email")
+            }else{
+                alert("Invalid email")
+            }
+            if(number.length==10){
+                alert("Valid number")
+            }else{
+                alert("Invalid Number")
+            }
+        }
+    </script>
+</body>
+</html>

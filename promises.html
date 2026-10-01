@@ -1,0 +1,22 @@
+<script>
+    const p = new Promise((resolve , reject)=>{
+        let a = true;
+        if(a){
+            let d = {name:"pushkar",branch:"cse"}
+            resolve(d);
+        }else{
+            let d = {msg:"Something went wrong"}
+            reject(d);
+        }
+    });
+    p.then((a)=>{
+        console.log(a);
+        
+    }).then(()=>{
+        alert("hey i am vinod")
+    }).catch((er)=>{
+        console.log(er.msg);
+        alert(er.msg)
+        
+    })
+</script>

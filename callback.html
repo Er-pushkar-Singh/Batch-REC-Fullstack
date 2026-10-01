@@ -1,0 +1,24 @@
+<script>
+    // synchronous callbacks 
+//    function fun(){
+//     console.log("heyyy i'm callback")
+//    }
+//    function ch(a){
+//     a();
+//     console.log("hey i'm heigher order function")
+//    }
+//  ch(fun)
+
+// Asynchronous Callback
+setTimeout(()=>{
+
+    setTimeout(()=>{
+        console.log("Hey i m callback")
+    },5000)
+    
+    console.log("hey i'm non blocking function");
+    
+
+},1000)
+</script> 
+ 
